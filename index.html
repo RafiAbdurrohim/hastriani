@@ -278,10 +278,15 @@
             <!-- Wishes will be added here -->
         </div>
 
-       <audio id="bgMusic" loop>
-        <source src="lagu.mp3" type="audio/mp3">
-        Browser Anda tidak mendukung elemen audio.
-    </audio>
+        <div class="music-controls" style="position: fixed; bottom: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <button id="playButton" class="button" style="margin: 0;">
+                🎵 Play Music
+            </button>
+            <audio id="bgMusic" loop>
+                <source src="lagu.mp3" type="audio/mp3">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+        </div>
         
     </div>
 
@@ -291,14 +296,40 @@
     </div>
 
     <script>
-          const audio = document.getElementById('bgMusic');
+      const audio = document.getElementById('bgMusic');
+        const playButton = document.getElementById('playButton');
+        let isPlaying = false;
 
-// Start playing music automatically
-        audio.play()
-            .catch(error => {
-                console.log("Auto-play failed:", error);
-                showPopup("Maaf, ada masalah dalam memutar musik 😔");
-            });
+        playButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                playButton.textContent = '🎵 Play Music';
+                isPlaying = false;
+            } else {
+                audio.play()
+                    .then(() => {
+                        playButton.textContent = '🎵 Pause Music';
+                        isPlaying = true;
+                    })
+                    .catch(error => {
+                        console.log("Audio play failed:", error);
+                        showPopup("Maaf, ada masalah dalam memutar musik 😔");
+                    });
+            }
+        });
+
+        // Start playing music on first user interaction
+        document.body.addEventListener('click', function() {
+            if (!isPlaying) {
+                audio.play()
+                    .catch(error => {
+                        console.log("Audio play failed:", error);
+                        showPopup("Maaf, ada masalah dalam memutar musik 😔");
+                    });
+                isPlaying = true;
+                playButton.textContent = '🎵 Pause Music';
+            }
+        }, { once: true });
         // Global variables
         let flippedCards = [];
         let matchedPairs = 0;
