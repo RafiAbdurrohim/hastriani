@@ -240,6 +240,37 @@
             0% { transform: scale(0.8); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
+        .hastri-message {
+            background-color: #f1f8e9;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            text-align: center;
+            animation: pop 0.5s ease-out;
+        }
+
+        .hastri-message h2 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        .hastri-message p {
+            color: #424242;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -251,6 +282,11 @@
         <div class="message-box">
             <p>Kadang kita butuh diingatkan...</p>
             <p>kalau kita itu luar biasa apa adanya! 💚</p>
+        </div>
+
+        <div class="hastri-message">
+            <h2>Untuk Kak Hastri yang Sedang Bad Mood...</h2>
+            <p>Kak, saya tahu kamu lagi nggak mood. Tapi jangan lupa ya, kamu itu luar biasa! Senyummu bisa bikin hari kita lebih cerah. Semangat terus ya, Kak! 💚</p>
         </div>
 
         <div class="mood-meter">
