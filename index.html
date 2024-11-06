@@ -278,15 +278,10 @@
             <!-- Wishes will be added here -->
         </div>
 
-        <div class="music-controls" style="position: fixed; bottom: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <button id="playButton" class="button" style="margin: 0;">
-                🎵 Play Music
-            </button>
-            <audio id="bgMusic">
-                <source src="lagu.mp3" type="audio/mp3">
-                Browser Anda tidak mendukung elemen audio.
-            </audio>
-        </div>
+        <audio id="bgMusic" loop>
+            <source src="lagu.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
         
     </div>
 
@@ -296,28 +291,14 @@
     </div>
 
     <script>
-         const audio = document.getElementById('bgMusic');
-        const playButton = document.getElementById('playButton');
-        let isPlaying = false;
+          const audio = document.getElementById('bgMusic');
 
-        playButton.addEventListener('click', function() {
-            if (isPlaying) {
-                audio.pause();
-                playButton.textContent = '🎵 Play Music';
-                isPlaying = false;
-            } else {
-                audio.play()
-                    .then(() => {
-                        playButton.textContent = '🎵 Pause Music';
-                        isPlaying = true;
-                    })
-                    .catch(error => {
-                        console.log("Audio play failed:", error);
-                        showPopup("Maaf, ada masalah dalam memutar musik 😔");
-                    });
-            }
-        });
-        
+// Start playing music automatically
+        audio.play()
+            .catch(error => {
+                console.log("Auto-play failed:", error);
+                showPopup("Maaf, ada masalah dalam memutar musik 😔");
+            });
         // Global variables
         let flippedCards = [];
         let matchedPairs = 0;
