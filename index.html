@@ -231,6 +231,140 @@
                 height: 70px;
             }
         }
+        /* Tambahkan di dalam tag <style> yang sudah ada */
+    .skripsi-booster {
+        background: rgba(255,255,255,0.95);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .progress-timeline {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .progress-timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        right: 40px;
+        height: 2px;
+        background: #e0e0e0;
+        transform: translateY(-50%);
+    }
+
+    .timeline-item {
+        position: relative;
+        z-index: 1;
+    }
+
+    .milestone {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s;
+    }
+
+    .milestone:hover {
+        transform: translateY(-5px);
+    }
+
+    .milestone .icon {
+        font-size: 1.5rem;
+    }
+
+    .milestone .text {
+        font-size: 0.9rem;
+        color: #2e7d32;
+        font-weight: bold;
+    }
+
+    .milestone .check {
+        color: #4caf50;
+        font-weight: bold;
+    }
+
+    .completed .milestone {
+        background: #f1f8e9;
+    }
+
+    .current .milestone {
+        background: #e8f5e9;
+        border: 2px solid #81c784;
+    }
+
+    .motivation-box {
+        margin: 2rem 0;
+    }
+
+    .motivation-text {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        color: #2e7d32;
+        min-height: 50px;
+    }
+
+    .self-care-reminder {
+        background: #f1f8e9;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+
+    .reminder-items {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+
+    .reminder-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .reminder-item .icon {
+        font-size: 1.5rem;
+    }
+
+    .reminder-item .text {
+        font-size: 0.9rem;
+        color: #2e7d32;
+    }
+
+
+@media (max-width: 600px) {
+    .progress-timeline {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .progress-timeline::before {
+        width: 2px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+    
+    .milestone {
+        width: 120px;
+    }
+}
 
         .pop-animation {
             animation: pop 0.3s ease-out;
@@ -271,6 +405,72 @@
                 opacity: 1;
             }
         }
+        .achievement-wall {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.achievement-card {
+    background: #f1f8e9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.smile-section {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.smile-button {
+    background: #81c784;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: all 0.3s;
+}
+
+.smile-button:hover {
+    background: #66bb6a;
+    transform: scale(1.05);
+}
+
+.smile-text {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-top: 1rem;
+    min-height: 60px;
+    transition: opacity 0.3s;
+}
     </style>
 </head>
 <body>
@@ -285,9 +485,89 @@
         </div>
 
         <div class="hastri-message">
-            <h2>Untuk Kak Hastri yang Sedang Bad Mood...</h2>
-            <p>Kak, saya tahu kamu lagi nggak mood. Tapi jangan lupa ya, kamu itu luar biasa! Senyummu bisa bikin hari kita lebih cerah. Semangat terus ya, Kak! 💚</p>
+            <h2>Untuk Kak Hastri yang Spesial ✨</h2>
+            <p>Kak, selamat ya udah berhasil sempro! Itu pencapaian yang luar biasa lho. Perjalanan skripsi memang nggak mudah, tapi aku yakin Kakak bisa lewatin semuanya dengan baik. Ingat, pelan-pelan nggak apa-apa, yang penting konsisten. Jangan lupa jaga kesehatan ya! Semangat terus Kak, aku selalu support Kakak! 💚</p>
         </div>
+        <!-- Tambahkan di dalam div class="container" sebelum mood-meter -->
+        <div class="skripsi-booster">
+            <h2>Skripsi Journey ✨</h2>
+            
+            <div class="progress-timeline">
+                <div class="timeline-item completed">
+                    <div class="milestone">
+                        <span class="icon">🎯</span>
+                        <span class="text">Sempro</span>
+                        <span class="check">✓</span>
+                    </div>
+                </div>
+                <div class="timeline-item current">
+                    <div class="milestone">
+                        <span class="icon">📚</span>
+                        <span class="text">Penelitian</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="milestone">
+                        <span class="icon">🎓</span>
+                        <span class="text">Sidang</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="motivation-box">
+                <button class="button" onclick="showSkripsiMotivation()">Butuh Semangat?</button>
+                <p id="skripsi-motivation" class="motivation-text"></p>
+            </div>
+
+            <div class="self-care-reminder">
+                <h3>Self-Care Corner 💝</h3>
+                <div class="reminder-items">
+                    <div class="reminder-item">
+                        <span class="icon">🌿</span>
+                        <span class="text">Istirahat</span>
+                    </div>
+                    <div class="reminder-item">
+                        <span class="icon">💧</span>
+                        <span class="text">Minum Air</span>
+                    </div>
+                    <div class="reminder-item">
+                        <span class="icon">🌙</span>
+                        <span class="text">Tidur Cukup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-wall">
+            <h2>✨ Your Amazing Journey ✨</h2>
+            <div class="achievements">
+                <div class="achievement-card">
+                    <span class="achievement-icon">🎯</span>
+                    <h3>Sempro: Clear!</h3>
+                    <p>Successfully defended your proposal like a boss!</p>
+                </div>
+                <div class="achievement-card">
+                    <span class="achievement-icon">💪</span>
+                    <h3>Progress Warrior</h3>
+                    <p>Taking steps forward everyday</p>
+                </div>
+                <div class="achievement-card">
+                    <span class="achievement-icon">⭐</span>
+                    <h3>Future Master</h3>
+                    <p>Soon-to-be Sarjana!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="smile-section">
+            <h2>Your Daily Dose of Smile 😊</h2>
+            <div class="smile-reasons">
+                <button class="smile-button" onclick="showSmileReason()">Click for a Smile!</button>
+                <p id="smile-text" class="smile-text"></p>
+            </div>
+        </div>
+
+        
 
         <div class="mood-meter">
             <h2>Gimana perasaanmu sekarang?</h2>
@@ -319,7 +599,7 @@
                 🎵 Play Music
             </button>
             <audio id="bgMusic" loop>
-                <source src="lagu.mp3" type="audio/mp3">
+                <source src="you.mp3" type="audio/mp3">
                 Browser Anda tidak mendukung elemen audio.
             </audio>
         </div>
@@ -401,6 +681,35 @@
                 duration: 0.5
             });
         }
+        const smileReasons = [
+        "Remember when you nailed that sempro presentation? That was awesome! 🌟",
+        "Your dedication is truly inspiring! Keep shining! ✨",
+        "Fun fact: You're literally someone's reason to smile! 💝",
+        "Hey, did you know you're doing amazing? Because you are! 💫",
+        "Your future self is so proud of you right now! 🌸",
+        "You make the world a better place just by being you! 💚",
+        "Every small step counts, and you're taking so many! 🌟",
+        "Your smile lights up the room - fact! ⭐"
+    ];
+
+    function showSmileReason() {
+        const smileText = document.getElementById('smile-text');
+        const randomReason = smileReasons[Math.floor(Math.random() * smileReasons.length)];
+        
+        gsap.to(smileText, {
+            opacity: 0,
+            duration: 0.3,
+            onComplete: () => {
+                smileText.textContent = randomReason;
+                gsap.to(smileText, {
+                    opacity: 1,
+                    duration: 0.3
+                });
+            }
+        });
+        
+        createFloatingItems();
+    }
 
         function createFloatingItem() {
             const items = ['🌸', '🍀', '💚', '✨', '🌟', '🦋', '🌺'];
@@ -421,6 +730,38 @@
                 onComplete: () => item.remove()
             });
         }
+        // Tambahkan di dalam tag <script> yang sudah ada
+        const skripsiMotivations = [
+            "Selamat ya udah berhasil sempro! 🎉 Next milestone pasti bisa!",
+            "Skripsi itu journey yang seru, nikmati prosesnya ya! 💚",
+            "Kamu udah buktiin bisa lewatin sempro, skripsi pasti bisa! ✨",
+            "Satu langkah lagi menuju sarjana! Semangat terus! 💪",
+            "Progress kecil tetap progress. Keep going! 🌱",
+            "Jangan lupa istirahat ya, kesehatan itu penting! 💝",
+            "Kamu lebih kuat dari yang kamu tau! 🌟",
+            "Tiap challenge itu kesempatan untuk tumbuh! 🚀"
+        ];
+
+        function showSkripsiMotivation() {
+            const motivationText = document.getElementById('skripsi-motivation');
+            const randomMotivation = skripsiMotivations[Math.floor(Math.random() * skripsiMotivations.length)];
+            
+            motivationText.style.opacity = '0';
+            setTimeout(() => {
+                motivationText.textContent = randomMotivation;
+                motivationText.style.opacity = '1';
+            }, 200);
+            
+            createFloatingItems(); // Reuse existing floating animation
+        }
+
+        // Tambahkan animasi untuk self-care reminders
+        document.querySelectorAll('.reminder-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.add('pop-animation');
+                setTimeout(() => this.classList.remove('pop-animation'), 300);
+            });
+        });
 
         function createFloatingItems() {
             for(let i = 0; i < 15; i++) {
